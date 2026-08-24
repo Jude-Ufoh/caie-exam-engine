@@ -136,7 +136,7 @@ const App = {
           <div class="hero">
             <span class="kicker">USAII &middot; Certified Artificial Intelligence Examiner</span>
             <h1>Train for the CAIE exam<br>like it's <span class="accent">exam day</span>.</h1>
-            <p class="lead">${QUESTION_BANK.length} real practice questions, two ways to study: a timed 50-question exam simulation, or an untimed learning mode where you check answers as you go.</p>
+            <p class="lead">${QUESTION_BANK.length} real practice questions, two ways to study: a timed ${EXAM_QUESTION_COUNT}-question exam simulation, or an untimed learning mode where you check answers as you go.</p>
             <div class="hero-actions">
               <button class="btn btn-primary btn-lg" onclick="App.navigate('/signup')">Create free account</button>
               <button class="btn btn-outline btn-lg" onclick="App.navigate('/login')">I already have an account</button>

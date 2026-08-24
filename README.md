@@ -1,6 +1,8 @@
 # CAIE Practice Engine
 
-A mobile-friendly computer-based testing (CBT) engine for practicing the **USAII Certified Artificial Intelligence Examiner (CAIE)** exam, built from a 450-question bank.
+A mobile-friendly computer-based testing (CBT) engine for practicing the **USAII Certified Artificial Intelligence Examiner (CAIE)** exam, built from a 450-question exam-dump bank.
+
+This is one of four sister apps, each a separate question bank with the same feature set: [caie-module-practice-engine](https://github.com/Jude-Ufoh/caie-module-practice-engine) (248Q, module-aligned), [caie-domain-practice-engine](https://github.com/Jude-Ufoh/caie-domain-practice-engine) (450Q, domain-organized), [caie-quick-recall-engine](https://github.com/Jude-Ufoh/caie-quick-recall-engine) (91Q, short-format). Pick whichever (or all).
 
 Static site — vanilla HTML/CSS/JS, no build step, no backend. Runs entirely in the browser and deploys as a free GitHub Pages site, so it's just a link you can share (e.g. on WhatsApp) and open on any phone.
 

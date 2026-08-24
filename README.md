@@ -9,7 +9,7 @@ Static site — vanilla HTML/CSS/JS, no build step, no backend. Runs entirely in
 - **Welcome page** introducing the two study modes.
 - **Sign up / log in** — lightweight, on-device accounts (username + password, password hashed with SHA-256 via WebCrypto). No email or server involved.
 - **Dashboard** — tests taken, average/best score, and a full history table of past attempts.
-- **Exam mode** — 50 random questions, 60-minute countdown, answers and explanations hidden until you submit (or time runs out).
+- **Exam mode** — 60 random questions, 100-minute countdown, answers and explanations hidden until you submit (or time runs out).
 - **Learning mode** — pick any number of questions and any time limit (or none), and check the answer + explanation after each question as you go.
 - **Full review** at the end of every attempt: correct/incorrect/skipped breakdown with explanations.
 

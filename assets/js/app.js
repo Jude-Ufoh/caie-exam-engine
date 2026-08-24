@@ -3,8 +3,8 @@
 // Vanilla JS, hash-based routing, no build step.
 // ============================================================
 
-const EXAM_QUESTION_COUNT = 50;
-const EXAM_TIME_LIMIT_SEC = 60 * 60;
+const EXAM_QUESTION_COUNT = 60;
+const EXAM_TIME_LIMIT_SEC = 100 * 60;
 const PRACTICE_BENCHMARK = 0.70;
 
 function shuffle(arr) {
@@ -19,7 +19,8 @@ function shuffle(arr) {
 function pickQuestions(n) {
   const pool = shuffle(QUESTION_BANK);
   const chosen = pool.slice(0, Math.min(n, pool.length));
-  return chosen.map(q => ({ ...q, options: shuffle(q.options) }));
+  // Options are kept in their original A-D order (not shuffled).
+  return chosen.map(q => ({ ...q, options: q.options.slice() }));
 }
 
 function fmtClock(totalSeconds) {
@@ -146,7 +147,7 @@ const App = {
             <div class="feature">
               <div class="num">01</div>
               <h3>Exam Mode</h3>
-              <p>50 questions, 60 minutes, answers revealed only after you submit &mdash; simulates real exam conditions.</p>
+              <p>${EXAM_QUESTION_COUNT} questions, ${EXAM_TIME_LIMIT_SEC / 60} minutes, answers revealed only after you submit &mdash; simulates real exam conditions.</p>
             </div>
             <div class="feature">
               <div class="num">02</div>
@@ -304,7 +305,7 @@ const App = {
               <p>Simulates the real thing. Answers and explanations are hidden until you submit.</p>
               <div class="meta">
                 <span>${EXAM_QUESTION_COUNT} questions</span>
-                <span>60 min</span>
+                <span>${EXAM_TIME_LIMIT_SEC / 60} min</span>
                 <span>reveal at end</span>
               </div>
               <button class="btn btn-primary btn-block" onclick="App.navigate('/exam-setup')">Start exam</button>
@@ -355,12 +356,12 @@ const App = {
             <p>This mirrors real exam conditions. Once you start, the clock won't stop.</p>
             <div class="stat-grid" style="grid-template-columns:1fr 1fr">
               <div class="stat"><div class="label">Questions</div><div class="value accent">${EXAM_QUESTION_COUNT}</div></div>
-              <div class="stat"><div class="label">Time limit</div><div class="value accent">60:00</div></div>
+              <div class="stat"><div class="label">Time limit</div><div class="value accent">${fmtClock(EXAM_TIME_LIMIT_SEC)}</div></div>
             </div>
-            <p style="font-size:13px">Questions are drawn at random from the ${QUESTION_BANK.length}-question bank and answer order is shuffled. Correct answers and explanations are only shown after you submit or time runs out.</p>
+            <p style="font-size:13px">Questions are drawn at random from the ${QUESTION_BANK.length}-question bank, with options shown in their original A-D order. Correct answers and explanations are only shown after you submit or time runs out.</p>
             <div style="display:flex;gap:10px;margin-top:8px">
               <button class="btn btn-outline" onclick="App.navigate('/dashboard')">Cancel</button>
-              <button class="btn btn-primary btn-block" onclick="App.startExam()">Start 60-minute exam</button>
+              <button class="btn btn-primary btn-block" onclick="App.startExam()">Start ${EXAM_TIME_LIMIT_SEC / 60}-minute exam</button>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 # CAIE Practice Engine
 
-A mobile-friendly computer-based testing (CBT) engine for practicing the **USAII Certified Artificial Intelligence Examiner (CAIE)** exam, built from a 450-question bank.
+A mobile-friendly computer-based testing (CBT) engine for practicing the **USAII Certified Artificial Intelligence Examiner (CAIE)** exam, built from a 248-question, module-aligned practice bank.
 
 Static site — vanilla HTML/CSS/JS, no build step, no backend. Runs entirely in the browser and deploys as a free GitHub Pages site, so it's just a link you can share (e.g. on WhatsApp) and open on any phone.
 
@@ -39,7 +39,7 @@ index.html               SPA shell
 assets/css/styles.css    Design system
 assets/js/storage.js     Accounts, sessions, history (localStorage)
 assets/js/app.js         Router + views + test engine
-assets/data/questions.js 450-question bank
+assets/data/questions.js 248-question bank (module-aligned practice bank; see file header for provenance/answer-key notes)
 manifest.json            PWA manifest (add-to-home-screen on mobile)
 ```
 
